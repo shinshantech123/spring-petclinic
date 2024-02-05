@@ -18,7 +18,6 @@ pipeline {
 
     stage('unit test') {
       steps {
-        junit '**/target/surefire-reports'
         sh './mvnw "-Dtest=**/petclinic/*/*.java" test'
       }
     }
