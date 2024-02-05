@@ -33,11 +33,5 @@ pipeline {
       }
     }
 
-    stage('junit test results') {
-      steps {
-        junit '**/target/surefire-reports/'
-      }
-    }
-
   }
 }
