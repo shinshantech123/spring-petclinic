@@ -19,7 +19,12 @@ pipeline {
     stage('unit test') {
       steps {
         sh './mvnw "-Dtest=**/petclinic/*/*.java" test'
-        junit '**/target/surefire-reports/'
+      }
+    }
+
+    stage('package') {
+      steps {
+        sh './mvnw package -DskipTests=true'
       }
     }
 
